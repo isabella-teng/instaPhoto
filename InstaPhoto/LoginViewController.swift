@@ -6,6 +6,8 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
 
+//TO DO: alert if login/sign up isn't successful. alert if is successful
+
 import UIKit
 import Parse
 
@@ -27,7 +29,11 @@ class LoginViewController: UIViewController {
     
 
     @IBAction func onSignIn(_ sender: Any) {
-        PFUser.logInWithUsername(inBackground: usernameField.text!, password: passwordField.text!) { (user: PFUser?, error: Error?) in
+        
+        let username = usernameField.text ?? ""
+        let password = passwordField.text ?? ""
+        
+        PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
             if user != nil {
                 print("User logged in successfully")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil )

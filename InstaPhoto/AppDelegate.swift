@@ -16,8 +16,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
         
+        //Parse initialization
         Parse.initialize(
             with: ParseClientConfiguration(block: { (configuration: ParseMutableClientConfiguration) -> Void in
                 configuration.applicationId = "Instaphoto"
@@ -25,6 +25,18 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://shrouded-river-14118.herokuapp.com/parse"
             })
         )
+            
+            //check if user is logged in
+        if PFUser.current() != nil {
+            //if there is a logged in user then load the home view controller
+            print("Welcome back!")
+            //load Chat view controller and set as root view controller
+            
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let accountViewController = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
+            window?.rootViewController = accountViewController
+        }
+    
         return true
     }
 

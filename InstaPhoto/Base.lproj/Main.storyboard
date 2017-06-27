@@ -71,10 +71,10 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--View Controller-->
+        <!--Account View Controller-->
         <scene sceneID="Q0Z-kc-eaJ">
             <objects>
-                <viewController id="Ygt-b0-brh" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AccountViewController" id="Ygt-b0-brh" customClass="AccountViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CMK-50-dBk"/>
                         <viewControllerLayoutGuide type="bottom" id="vTY-Jp-ARQ"/>
