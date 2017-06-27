@@ -33,8 +33,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             //load Chat view controller and set as root view controller
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
-            let accountViewController = storyboard.instantiateViewController(withIdentifier: "AccountViewController")
-            window?.rootViewController = accountViewController
+            let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
+            
+            window?.rootViewController = tabBarController as! UITabBarController
         }
     
         return true

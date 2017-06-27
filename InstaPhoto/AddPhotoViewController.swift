@@ -9,6 +9,8 @@
 import UIKit
 import Parse
 
+//to do: put in ViewDidAppear, view did load only runs once, boolean if presented picture
+
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     override func viewDidLoad() {

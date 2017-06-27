@@ -19,16 +19,10 @@ class AccountViewController: UIViewController{
         
     }
 
-    @IBAction func onLogout(_ sender: Any) {
-        PFUser.logOutInBackground { (error: Error?) in
-            //PFUser.currentUser() will now be nil
-            print("User has logged out")
-            self.performSegue(withIdentifier: "logoutSegue", sender: nil )
-
-        }
-    }
+   
+        
     
-    override func didReceiveMemoryWarning() {
+        override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }

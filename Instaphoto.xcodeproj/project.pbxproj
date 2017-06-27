@@ -12,6 +12,7 @@
 		DF892FEE28B8A76515A4BEE8 /* Pods_InstaPhotoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0871F449891E5D986D7D4F41 /* Pods_InstaPhotoTests.framework */; };
 		FAA3911E1F02FD3F007552B4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */; };
 		FAA391201F03077F007552B4 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */; };
+		FAA391231F0314EC007552B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA391221F0314EC007552B4 /* ProfileViewController.swift */; };
 		FAB65E151F022E3F00FE3114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB65E141F022E3F00FE3114 /* AppDelegate.swift */; };
 		FAB65E1A1F022E3F00FE3114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB65E181F022E3F00FE3114 /* Main.storyboard */; };
 		FAB65E1C1F022E3F00FE3114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB65E1B1F022E3F00FE3114 /* Assets.xcassets */; };
@@ -50,6 +51,7 @@
 		EA3E82ABBFC3C9D3A4A04D8A /* Pods-InstaPhotoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPhotoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPhotoTests/Pods-InstaPhotoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
+		FAA391221F0314EC007552B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		FAB65E111F022E3F00FE3114 /* InstaPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB65E141F022E3F00FE3114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB65E191F022E3F00FE3114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -122,6 +124,7 @@
 				FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */,
 				FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */,
 				FAB65E421F02309700FE3114 /* LoginViewController.swift */,
+				FAA391221F0314EC007552B4 /* ProfileViewController.swift */,
 			);
 			name = ViewControllers;
 			sourceTree = "<group>";
@@ -463,6 +466,7 @@
 			files = (
 				FAB65E431F02309700FE3114 /* LoginViewController.swift in Sources */,
 				FAA391201F03077F007552B4 /* AddPhotoViewController.swift in Sources */,
+				FAA391231F0314EC007552B4 /* ProfileViewController.swift in Sources */,
 				FAA3911E1F02FD3F007552B4 /* AccountViewController.swift in Sources */,
 				FAB65E151F022E3F00FE3114 /* AppDelegate.swift in Sources */,
 			);

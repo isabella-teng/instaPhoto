@@ -71,7 +71,38 @@
             </objects>
             <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
         </scene>
-        <!--Account View Controller-->
+        <!--Profile-->
+        <scene sceneID="eEk-qS-hyF">
+            <objects>
+                <viewController id="DnC-aB-Qde" customClass="ProfileViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="mu6-uN-FWo"/>
+                        <viewControllerLayoutGuide type="bottom" id="ShH-c5-8qR"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="FHi-yB-AlD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Profile" id="brF-Wq-ar5">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="jet-Y2-MCT">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OvR-Qo-2AZ">
+                                <rect key="frame" x="292" y="-5" width="67" height="53"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Logout"/>
+                                <connections>
+                                    <action selector="onLogout:" destination="DnC-aB-Qde" eventType="touchUpInside" id="qGa-uS-6P2"/>
+                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="xwh-9j-6sl"/>
+                                </connections>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="FTN-pz-6IZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2823" y="-812"/>
+        </scene>
+        <!--Instaphoto-->
         <scene sceneID="Q0Z-kc-eaJ">
             <objects>
                 <viewController storyboardIdentifier="AccountViewController" id="Ygt-b0-brh" customClass="AccountViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -90,25 +121,16 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1q-Cr-TT6">
-                                <rect key="frame" x="306" y="72" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Logout"/>
-                                <connections>
-                                    <action selector="onLogout:" destination="Ygt-b0-brh" eventType="touchUpInside" id="07I-a0-SE3"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="qDF-ea-o2l"/>
-                                </connections>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="4Em-zF-Y3t"/>
+                    <navigationItem key="navigationItem" title="Instaphoto" id="4Em-zF-Y3t"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPu-Lu-nKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2518" y="-60"/>
+            <point key="canvasLocation" x="2598" y="139"/>
         </scene>
-        <!--Add Photo View Controller-->
+        <!--Upload!-->
         <scene sceneID="ftD-jc-bbR">
             <objects>
                 <viewController id="nX4-E7-EbT" customClass="AddPhotoViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -119,27 +141,18 @@
                     <view key="view" contentMode="scaleToFill" id="610-cP-JNw">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Choose a picture!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4R6-Ki-yUx">
-                                <rect key="frame" x="111" y="74" width="153" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="E90-9i-6Dw"/>
+                    <navigationItem key="navigationItem" title="Upload!" id="E90-9i-6Dw"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zx6-ja-ITu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2472.8000000000002" y="842.42878560719646"/>
+            <point key="canvasLocation" x="2399" y="983"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ooy-2o-Os5">
             <objects>
-                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="NB6-E5-rZi" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="MainTabBarController" automaticallyAdjustsScrollViewInsets="NO" id="NB6-E5-rZi" sceneMemberID="viewController">
                     <toolbarItems/>
                     <tabBar key="tabBar" contentMode="scaleToFill" id="rM9-hn-U6D">
                         <autoresizingMask key="autoresizingMask"/>
@@ -148,6 +161,7 @@
                     <connections>
                         <segue destination="Q4T-PU-2LS" kind="relationship" relationship="viewControllers" id="MXc-SS-OWL"/>
                         <segue destination="dH4-PR-kDt" kind="relationship" relationship="viewControllers" id="fci-ui-Cc6"/>
+                        <segue destination="8DB-cO-sQj" kind="relationship" relationship="viewControllers" id="2C2-Gf-8El"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fP-3w-GK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -171,7 +185,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2Y-Oc-eIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1673" y="-59"/>
+            <point key="canvasLocation" x="1775" y="139"/>
         </scene>
         <!--New Post-->
         <scene sceneID="FoM-mL-XM7">
@@ -190,7 +204,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5M-uB-wOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1533.5999999999999" y="842.42878560719646"/>
+            <point key="canvasLocation" x="1599" y="983"/>
+        </scene>
+        <!--Profile-->
+        <scene sceneID="mIP-RH-W6C">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8DB-cO-sQj" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Profile" id="kQ2-jg-roG"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o4h-62-3qU">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="DnC-aB-Qde" kind="relationship" relationship="rootViewController" id="jbB-ax-gXa"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OYm-xX-0lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1988" y="-811"/>
         </scene>
     </scenes>
 </document>
