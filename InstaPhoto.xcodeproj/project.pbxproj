@@ -17,6 +17,7 @@
 		FAB65E1F1F022E3F00FE3114 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB65E1D1F022E3F00FE3114 /* LaunchScreen.storyboard */; };
 		FAB65E2A1F022E3F00FE3114 /* InstaPhotoTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB65E291F022E3F00FE3114 /* InstaPhotoTests.swift */; };
 		FAB65E351F022E3F00FE3114 /* InstaPhotoUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB65E341F022E3F00FE3114 /* InstaPhotoUITests.swift */; };
+		FAB65E431F02309700FE3114 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB65E421F02309700FE3114 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -59,6 +60,7 @@
 		FAB65E301F022E3F00FE3114 /* InstaPhotoUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InstaPhotoUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB65E341F022E3F00FE3114 /* InstaPhotoUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstaPhotoUITests.swift; sourceTree = "<group>"; };
 		FAB65E361F022E3F00FE3114 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FAB65E421F02309700FE3114 /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 				FAB65E141F022E3F00FE3114 /* AppDelegate.swift */,
 				FAB65E161F022E3F00FE3114 /* ViewController.swift */,
 				FAB65E181F022E3F00FE3114 /* Main.storyboard */,
+				FAB65E421F02309700FE3114 /* LoginViewController.swift */,
 				FAB65E1B1F022E3F00FE3114 /* Assets.xcassets */,
 				FAB65E1D1F022E3F00FE3114 /* LaunchScreen.storyboard */,
 				FAB65E201F022E3F00FE3114 /* Info.plist */,
@@ -446,6 +449,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB65E431F02309700FE3114 /* LoginViewController.swift in Sources */,
 				FAB65E171F022E3F00FE3114 /* ViewController.swift in Sources */,
 				FAB65E151F022E3F00FE3114 /* AppDelegate.swift in Sources */,
 			);
@@ -700,6 +704,7 @@
 				FAB65E3B1F022E3F00FE3114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAB65E3C1F022E3F00FE3114 /* Build configuration list for PBXNativeTarget "InstaPhotoTests" */ = {
 			isa = XCConfigurationList;
@@ -708,6 +713,7 @@
 				FAB65E3E1F022E3F00FE3114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FAB65E3F1F022E3F00FE3114 /* Build configuration list for PBXNativeTarget "InstaPhotoUITests" */ = {
 			isa = XCConfigurationList;
@@ -716,6 +722,7 @@
 				FAB65E411F022E3F00FE3114 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
