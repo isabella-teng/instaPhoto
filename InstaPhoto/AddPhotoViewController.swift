@@ -13,9 +13,12 @@ import Parse
 
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+
+    @IBAction func takePhoto(_ sender: Any) {
         //instantiate a UIImagePickerController
         let vc = UIImagePickerController()
         vc.delegate = self
@@ -33,9 +36,9 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
             print("Camera is not available so we will use the photo library instead")
             vc.sourceType = .photoLibrary
         }
-
+        
     }
-    
+
     //resize image for Parse
     
     

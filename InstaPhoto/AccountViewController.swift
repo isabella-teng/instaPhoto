@@ -20,7 +20,7 @@ class AccountViewController: UIViewController{
     }
 
    
-        
+
     
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
