@@ -13,6 +13,7 @@
 		FAA3911E1F02FD3F007552B4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */; };
 		FAA391201F03077F007552B4 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */; };
 		FAA391231F0314EC007552B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA391221F0314EC007552B4 /* ProfileViewController.swift */; };
+		FAA391251F033367007552B4 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA391241F033367007552B4 /* Post.swift */; };
 		FAB65E151F022E3F00FE3114 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB65E141F022E3F00FE3114 /* AppDelegate.swift */; };
 		FAB65E1A1F022E3F00FE3114 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FAB65E181F022E3F00FE3114 /* Main.storyboard */; };
 		FAB65E1C1F022E3F00FE3114 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB65E1B1F022E3F00FE3114 /* Assets.xcassets */; };
@@ -52,6 +53,7 @@
 		FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; };
 		FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		FAA391221F0314EC007552B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		FAA391241F033367007552B4 /* Post.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		FAB65E111F022E3F00FE3114 /* InstaPhoto.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InstaPhoto.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FAB65E141F022E3F00FE3114 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FAB65E191F022E3F00FE3114 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 			children = (
 				FAA391211F030797007552B4 /* ViewControllers */,
 				FAB65E181F022E3F00FE3114 /* Main.storyboard */,
+				FAA391241F033367007552B4 /* Post.swift */,
 				FAB65E141F022E3F00FE3114 /* AppDelegate.swift */,
 				FAB65E1B1F022E3F00FE3114 /* Assets.xcassets */,
 				FAB65E1D1F022E3F00FE3114 /* LaunchScreen.storyboard */,
@@ -467,6 +470,7 @@
 				FAB65E431F02309700FE3114 /* LoginViewController.swift in Sources */,
 				FAA391201F03077F007552B4 /* AddPhotoViewController.swift in Sources */,
 				FAA391231F0314EC007552B4 /* ProfileViewController.swift in Sources */,
+				FAA391251F033367007552B4 /* Post.swift in Sources */,
 				FAA3911E1F02FD3F007552B4 /* AccountViewController.swift in Sources */,
 				FAB65E151F022E3F00FE3114 /* AppDelegate.swift in Sources */,
 			);

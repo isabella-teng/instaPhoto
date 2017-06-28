@@ -6,6 +6,8 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
 
+
+//fix logout to just dismiss NOT what I have now
 import UIKit
 import Parse
 

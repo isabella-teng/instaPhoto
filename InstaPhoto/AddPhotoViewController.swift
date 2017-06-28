@@ -12,7 +12,6 @@ import Parse
 //to do: put in ViewDidAppear, view did load only runs once, boolean if presented picture
 
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -68,9 +67,15 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
         //get the image captured by the UIImagePickerController
         let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        
+        //this is the photo after you crop it
         let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
-        //do something with the images, resize for Parse here??
+        
+        //do something with the images, resize for Parse here & then upload
+        
+        //send the image to the editing view controller
+        self.performSegue(withIdentifier: "editingSegue", sender: nil)
         
         //dismiss UIImageController to go back to original view controller
         dismiss(animated: true, completion: nil)
