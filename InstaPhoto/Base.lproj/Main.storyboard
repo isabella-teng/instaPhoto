@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16F2073" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="NB6-E5-rZi">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -69,9 +69,9 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="136.80000000000001" y="138.98050974512745"/>
+            <point key="canvasLocation" x="-1441" y="208"/>
         </scene>
-        <!--Profile-->
+        <!--Put Username Here-->
         <scene sceneID="eEk-qS-hyF">
             <objects>
                 <viewController id="DnC-aB-Qde" customClass="ProfileViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
@@ -84,7 +84,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Profile" id="brF-Wq-ar5">
+                    <navigationItem key="navigationItem" title="Put Username Here" id="brF-Wq-ar5">
                         <barButtonItem key="rightBarButtonItem" style="plain" id="jet-Y2-MCT">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="OvR-Qo-2AZ">
                                 <rect key="frame" x="292" y="-5" width="67" height="53"/>
@@ -100,7 +100,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTN-pz-6IZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823" y="-812"/>
+            <point key="canvasLocation" x="1934" y="-814"/>
         </scene>
         <!--Instaphoto-->
         <scene sceneID="Q0Z-kc-eaJ">
@@ -114,13 +114,34 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Welcome User!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lhb-ed-33s">
-                                <rect key="frame" x="104" y="88" width="167" height="21"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="238" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HS0-C1-ubq">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="238" id="4kU-my-9kC">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="238"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4kU-my-9kC" id="W0R-CN-gop" customClass="InstaPostTableViewCell" customModule="InstaPhoto" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="237.5"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nl-v0-xzN">
+                                                    <rect key="frame" x="50" y="0.0" width="274" height="188"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                </imageView>
+                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yU-V0-bc7">
+                                                    <rect key="frame" x="50" y="196" width="274" height="30"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <nil key="textColor"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                    <textInputTraits key="textInputTraits"/>
+                                                </textField>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -128,7 +149,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPu-Lu-nKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2597.5999999999999" y="138.98050974512745"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="166.8665667166417"/>
         </scene>
         <!--Upload-->
         <scene sceneID="ftD-jc-bbR">
@@ -142,22 +163,19 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwf-bL-up8">
-                                <rect key="frame" x="126" y="277" width="123" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="123" id="8Y8-Kw-9Sv"/>
-                                </constraints>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rwf-bL-up8">
+                                <rect key="frame" x="126" y="291" width="123" height="30"/>
                                 <state key="normal" title="Take Photo"/>
                                 <connections>
                                     <action selector="takePhoto:" destination="nX4-E7-EbT" eventType="touchUpInside" id="053-NF-InZ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="LRr-Xr-5eh">
-                                <rect key="frame" x="126" y="333" width="123" height="30"/>
+                                <rect key="frame" x="126" y="352" width="123" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="123" id="98D-we-cHA"/>
                                 </constraints>
-                                <state key="normal" title="Choose Photo"/>
+                                <state key="normal" title="Photo Library"/>
                                 <connections>
                                     <action selector="uploadPhoto:" destination="nX4-E7-EbT" eventType="touchUpInside" id="od2-DS-9GT"/>
                                 </connections>
@@ -165,10 +183,11 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="top" secondItem="rwf-bL-up8" secondAttribute="bottom" constant="50" id="69F-Wz-P8I"/>
-                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="leading" secondItem="rwf-bL-up8" secondAttribute="leading" id="fSK-P2-6rV"/>
-                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="centerX" secondItem="610-cP-JNw" secondAttribute="centerX" id="h5w-7O-fAl"/>
-                            <constraint firstItem="BKI-dm-pCn" firstAttribute="top" secondItem="LRr-Xr-5eh" secondAttribute="bottom" constant="231" id="yf3-QZ-sXq"/>
+                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="leading" secondItem="rwf-bL-up8" secondAttribute="leading" id="0O9-62-Wns"/>
+                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="trailing" secondItem="rwf-bL-up8" secondAttribute="trailing" id="1Ea-2o-5Bf"/>
+                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="top" secondItem="610-cP-JNw" secondAttribute="top" constant="191" id="PsE-PG-CZB"/>
+                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="centerX" secondItem="610-cP-JNw" secondAttribute="centerX" id="S0G-jB-eNI"/>
+                            <constraint firstItem="LRr-Xr-5eh" firstAttribute="top" secondItem="rwf-bL-up8" secondAttribute="bottom" constant="21" id="iNv-jd-tKQ"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" title="Upload" id="E90-9i-6Dw"/>
@@ -178,12 +197,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zx6-ja-ITu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2397.5999999999999" y="982.75862068965523"/>
+            <point key="canvasLocation" x="1933.5999999999999" y="1029.5352323838081"/>
         </scene>
-        <!--View Controller-->
+        <!--Edit Photo View Controller-->
         <scene sceneID="ZjG-Yr-UQN">
             <objects>
-                <viewController id="0sB-Im-bdq" sceneMemberID="viewController">
+                <viewController id="0sB-Im-bdq" customClass="EditPhotoViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="fKN-jU-PSj"/>
                         <viewControllerLayoutGuide type="bottom" id="YUJ-He-ahT"/>
@@ -200,16 +219,35 @@
                                 <rect key="frame" x="21" y="360" width="333" height="219"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <connections>
+                                    <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="fUS-eC-SYE"/>
+                                    <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="ld4-Rw-qV0"/>
+                                </connections>
                             </textView>
                         </subviews>
                         <color key="backgroundColor" red="0.98899446489999998" green="0.86847509960000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="bSL-3u-p0E"/>
+                            <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="QdE-Iu-btH"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="captionTextView" destination="4Fx-17-hcV" id="vxI-6C-UGU"/>
+                        <outlet property="photoImageView" destination="ReZ-56-Fab" id="IKc-Pv-fMc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgU-Fx-Z0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="y3d-e6-2W4">
+                    <connections>
+                        <action selector="onKeyTap:" destination="0sB-Im-bdq" id="0hv-SO-mmR"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3165.5999999999999" y="982.75862068965523"/>
+            <point key="canvasLocation" x="2622" y="1030"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ooy-2o-Os5">
@@ -228,7 +266,7 @@
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3fP-3w-GK9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="858" y="139"/>
+            <point key="canvasLocation" x="-604" y="207"/>
         </scene>
         <!--Home-->
         <scene sceneID="2mP-vB-ol5">
@@ -247,7 +285,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="K2Y-Oc-eIN" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1775" y="139"/>
+            <point key="canvasLocation" x="810" y="167"/>
         </scene>
         <!--New Post-->
         <scene sceneID="FoM-mL-XM7">
@@ -266,7 +304,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="B5M-uB-wOW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1599" y="983"/>
+            <point key="canvasLocation" x="882" y="1030"/>
         </scene>
         <!--Profile-->
         <scene sceneID="mIP-RH-W6C">
@@ -285,7 +323,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OYm-xX-0lW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1988" y="-811"/>
+            <point key="canvasLocation" x="743" y="-813"/>
         </scene>
     </scenes>
 </document>

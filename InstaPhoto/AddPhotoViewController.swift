@@ -9,9 +9,15 @@
 import UIKit
 import Parse
 
-//to do: put in ViewDidAppear, view did load only runs once, boolean if presented picture
 
 class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    
+    
+    @IBOutlet weak var photoView: UIImageView!
+    @IBOutlet weak var captionView: UITextView!
+    
+    var originalImage: UIImage?
+    var editedImage: UIImage?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -65,20 +71,31 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+        
         //get the image captured by the UIImagePickerController
-        let originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
         
         //this is the photo after you crop it
-        let editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         
-        //do something with the images, resize for Parse here & then upload
+        //do something with the images
+        //resize for Parse here & then upload
+        
+        //        resize(image: editedImage, newSize: CGSizeMake(40, 40))
+        
         
         //send the image to the editing view controller
-        self.performSegue(withIdentifier: "editingSegue", sender: nil)
+         self.performSegue(withIdentifier: "editingSegue", sender: nil)
         
         //dismiss UIImageController to go back to original view controller
         dismiss(animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! EditPhotoViewController
+        destinationViewController.chosenImage = editedImage
+        
     }
 
     override func didReceiveMemoryWarning() {
