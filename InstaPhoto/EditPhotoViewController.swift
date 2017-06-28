@@ -36,6 +36,7 @@ class EditPhotoViewController: UIViewController {
                 print("Yay posted")
                 //segue to the photo feed (Home) view controller
                 self.performSegue(withIdentifier: "postSegue", sender: Any?.self)
+                //self.tabBarController?.selectedIndex = 0
                 
             } else {
                 print(error?.localizedDescription)
@@ -50,6 +51,7 @@ class EditPhotoViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+    
     
 
     /*

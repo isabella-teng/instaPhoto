@@ -32,19 +32,24 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl.addTarget(self, action: #selector(AccountViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
         
-        fetchPosts()
+        //fetchPosts()
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        fetchPosts()
+    }
     
     func didPullToRefresh(_ refreshControl: UIRefreshControl) {
         fetchPosts()
     }
     
     func fetchPosts() {
-        var query = PFQuery(className: "Post")
+        let query = PFQuery(className: "Post")
         
         query.order(byDescending: "createdAt")
+        //query.includeKey("createdAt")
         query.includeKey("author")
+        
         
         // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
         // immediately.  Any code that depends on the query result should be moved
@@ -71,18 +76,23 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         let cell = tableView.dequeueReusableCell(withIdentifier: "InstaPostTableViewCell", for: indexPath) as! InstaPostTableViewCell
         let singlePost = allPosts![indexPath.row]
         
-        let author = singlePost["author"] as! PFUser
-        let username = author.username
-        cell.usernameLabel.text = username
-        cell.captionLabel.text = singlePost["caption"] as! String
-//        let image = singlePost["media"] as! Data
-//        cell.imgPostImageView.image = singlePost["media"] as! UIImage
-//        cell.imgPostImageView.image = 
+        if let author = singlePost["author"] as? PFUser {
+            let username = author.username
+            cell.usernameLabel.text = username
+        }
         
+        cell.captionLabel.text = singlePost["caption"] as! String
         cell.instagramPost = singlePost
         
         return cell
         
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! DetailViewController
+        let cell = sender as! UITableViewCell
+        let indexPath = tableView.indexPath(for: cell)
+        destinationViewController.post = allPosts?[indexPath!.row]
     }
         override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
