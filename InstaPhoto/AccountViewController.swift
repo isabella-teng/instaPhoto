@@ -6,7 +6,7 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
 
-//TO DO: Add refresh
+//TO DO: Add refresh, get new post to automatically upload
 
 import UIKit
 import Parse
@@ -18,26 +18,37 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     
     var allPosts: [PFObject]? = []
     
-        
+    var refreshControl: UIRefreshControl!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
         
+        // Initialize a UIRefreshControl
+        
+        refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(AccountViewController.didPullToRefresh(_:)), for: .valueChanged)
+        tableView.insertSubview(refreshControl, at: 0)
+        
+        fetchPosts()
+    }
+    
+    
+    func didPullToRefresh(_ refreshControl: UIRefreshControl) {
         fetchPosts()
     }
     
     func fetchPosts() {
         var query = PFQuery(className: "Post")
         
+        query.order(byDescending: "createdAt")
         query.includeKey("author")
         
         // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
         // immediately.  Any code that depends on the query result should be moved
         // inside the completion block above.
-        
-//        query.includeKey("user")
         
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let error = error {
@@ -45,6 +56,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             } else {
                 self.allPosts = posts
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
             
         }
