@@ -4,16 +4,19 @@
 //
 //  Created by Isabella Teng on 6/27/17.
 //  Copyright © 2017 Isabella Teng. All rights reserved.
-//
+
+//TO DO: fix keyboard tap
+//TO DO: fix segues and navigation
 
 import UIKit
+import Parse
 
 class EditPhotoViewController: UIViewController {
     
     @IBOutlet weak var captionTextView: UITextView!
     @IBOutlet weak var photoImageView: UIImageView!
     
-    
+
     @IBAction func onKeyTap(_ sender: Any) {
         view.endEditing(true)
     }
@@ -24,7 +27,24 @@ class EditPhotoViewController: UIViewController {
         super.viewDidLoad()
         
         photoImageView.image = chosenImage
+        
     }
+    
+    @IBAction func onPost(_ sender: Any) {
+        Post.postUserImage(image: chosenImage, withCaption: captionTextView.text) { (success: Bool, error: Error?) in
+            if success {
+                print("Yay posted")
+                //segue to the photo feed (Home) view controller
+                self.performSegue(withIdentifier: "postSegue", sender: Any?.self)
+                
+            } else {
+                print(error?.localizedDescription)
+            }
+            
+        }
+        
+    }
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

@@ -74,15 +74,13 @@ class AddPhotoViewController: UIViewController, UIImagePickerControllerDelegate,
         
         //get the image captured by the UIImagePickerController
         originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
-        
         //this is the photo after you crop it
         editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         
         
         //do something with the images
-        //resize for Parse here & then upload
         
-        //        resize(image: editedImage, newSize: CGSizeMake(40, 40))
+        editedImage = resize(image: editedImage!, newSize: CGSize(width: 750, height: 750))
         
         
         //send the image to the editing view controller

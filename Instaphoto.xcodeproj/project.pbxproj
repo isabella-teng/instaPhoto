@@ -127,10 +127,10 @@
 		FAA391211F030797007552B4 /* ViewControllers */ = {
 			isa = PBXGroup;
 			children = (
-				FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */,
 				FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */,
-				FAB65E421F02309700FE3114 /* LoginViewController.swift */,
+				FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */,
 				FAA391221F0314EC007552B4 /* ProfileViewController.swift */,
+				FAB65E421F02309700FE3114 /* LoginViewController.swift */,
 				FAA391261F034C8D007552B4 /* EditPhotoViewController.swift */,
 			);
 			name = ViewControllers;

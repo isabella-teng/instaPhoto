@@ -119,26 +119,39 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="238" id="4kU-my-9kC">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="InstaPostTableViewCell" rowHeight="238" id="4kU-my-9kC" customClass="InstaPostTableViewCell" customModule="InstaPhoto" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="238"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="4kU-my-9kC" id="W0R-CN-gop" customClass="InstaPostTableViewCell" customModule="InstaPhoto" customModuleProvider="target">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="237.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nl-v0-xzN">
-                                                    <rect key="frame" x="50" y="0.0" width="274" height="188"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="7nl-v0-xzN" customClass="PFImageView">
+                                                    <rect key="frame" x="60" y="0.0" width="264" height="157"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </imageView>
-                                                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="7yU-V0-bc7">
-                                                    <rect key="frame" x="50" y="196" width="274" height="30"/>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Caption" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L1O-dn-uKs">
+                                                    <rect key="frame" x="60" y="193" width="264" height="21"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
-                                                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                                    <textInputTraits key="textInputTraits"/>
-                                                </textField>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Username" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fM7-2W-9O6">
+                                                    <rect key="frame" x="60" y="165" width="79" height="21"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="captionLabel" destination="L1O-dn-uKs" id="EEy-1a-qDS"/>
+                                            <outlet property="imgPostImageView" destination="7nl-v0-xzN" id="1ys-bb-Wdv"/>
+                                            <outlet property="usernameLabel" destination="fM7-2W-9O6" id="rlA-n9-d5s"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
@@ -146,10 +159,13 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" title="Instaphoto" id="4Em-zF-Y3t"/>
+                    <connections>
+                        <outlet property="tableView" destination="HS0-C1-ubq" id="8OT-BJ-38M"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="OPu-Lu-nKw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1933.5999999999999" y="166.8665667166417"/>
+            <point key="canvasLocation" x="1604" y="167"/>
         </scene>
         <!--Upload-->
         <scene sceneID="ftD-jc-bbR">
@@ -222,17 +238,21 @@
                                 <gestureRecognizers/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                <connections>
-                                    <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="fUS-eC-SYE"/>
-                                    <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="ld4-Rw-qV0"/>
-                                </connections>
                             </textView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hw-VZ-zbQ">
+                                <rect key="frame" x="269" y="67" width="85" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Post!"/>
+                                <connections>
+                                    <action selector="onPost:" destination="0sB-Im-bdq" eventType="touchUpInside" id="deR-Bg-63x"/>
+                                    <segue destination="NB6-E5-rZi" kind="presentation" identifier="postSegue" id="jrG-eo-5jv"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.98899446489999998" green="0.86847509960000002" blue="1" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
                         <connections>
-                            <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="bSL-3u-p0E"/>
-                            <outletCollection property="gestureRecognizers" destination="y3d-e6-2W4" appends="YES" id="QdE-Iu-btH"/>
+                            <outletCollection property="gestureRecognizers" destination="uB5-ew-ARh" appends="YES" id="HWZ-g2-k9n"/>
                         </connections>
                     </view>
                     <connections>
@@ -241,13 +261,13 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vgU-Fx-Z0j" userLabel="First Responder" sceneMemberID="firstResponder"/>
-                <tapGestureRecognizer id="y3d-e6-2W4">
+                <tapGestureRecognizer id="uB5-ew-ARh">
                     <connections>
-                        <action selector="onKeyTap:" destination="0sB-Im-bdq" id="0hv-SO-mmR"/>
+                        <action selector="onKeyTap:" destination="0sB-Im-bdq" id="OjK-yf-Oef"/>
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="2622" y="1030"/>
+            <point key="canvasLocation" x="2621.5999999999999" y="1029.5352323838081"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="Ooy-2o-Os5">
@@ -326,4 +346,7 @@
             <point key="canvasLocation" x="743" y="-813"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="jrG-eo-5jv"/>
+    </inferredMetricsTieBreakers>
 </document>
