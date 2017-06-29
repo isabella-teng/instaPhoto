@@ -52,6 +52,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         // immediately.  Any code that depends on the query result should be moved
         // inside the completion block above.
         
+        //add if statement to only get the user id
         query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
             if let error = error {
                 print(error.localizedDescription)
@@ -66,6 +67,7 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        
         return allPosts!.count
     }
 

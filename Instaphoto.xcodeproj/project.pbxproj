@@ -141,6 +141,15 @@
 			name = ViewControllers;
 			sourceTree = "<group>";
 		};
+		FAA3912F1F058100007552B4 /* Custom Cells */ = {
+			isa = PBXGroup;
+			children = (
+				FAA3912C1F057A18007552B4 /* CollectionPhotoCell.swift */,
+				FAA391281F040A3F007552B4 /* InstaPostTableViewCell.swift */,
+			);
+			name = "Custom Cells";
+			sourceTree = "<group>";
+		};
 		FAB65E081F022E3F00FE3114 = {
 			isa = PBXGroup;
 			children = (
@@ -168,8 +177,7 @@
 			children = (
 				FAA391211F030797007552B4 /* ViewControllers */,
 				FAB65E181F022E3F00FE3114 /* Main.storyboard */,
-				FAA3912C1F057A18007552B4 /* CollectionPhotoCell.swift */,
-				FAA391281F040A3F007552B4 /* InstaPostTableViewCell.swift */,
+				FAA3912F1F058100007552B4 /* Custom Cells */,
 				FAA391241F033367007552B4 /* Post.swift */,
 				FAB65E141F022E3F00FE3114 /* AppDelegate.swift */,
 				FAB65E1B1F022E3F00FE3114 /* Assets.xcassets */,

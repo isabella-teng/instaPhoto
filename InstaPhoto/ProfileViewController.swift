@@ -12,9 +12,10 @@ import UIKit
 import Parse
 import ParseUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
 
     @IBOutlet weak var collectionView: UICollectionView!
+    
     
     var allPosts: [PFObject]? = []
     
@@ -23,6 +24,12 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         collectionView.dataSource = self
         collectionView.delegate = self
+        
+        //customize layout of the photo grid
+//        flowLayout.scrollDirection = .Horizontal
+//        flowLayout.minimumLineSpacing = 0
+//        flowLayout.minimumInteritemSpacing = 0
+//        flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 10)
         
         //setup a sticky header
 //         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HeaderViewIdentifier)
@@ -36,6 +43,8 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         
         query.order(byDescending: "createdAt")
         query.includeKey("author")
+        query.whereKey("author", equalTo: PFUser.current())
+        //author is a PFuser object
         
         
         // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
