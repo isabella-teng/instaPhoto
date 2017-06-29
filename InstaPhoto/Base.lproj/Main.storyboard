@@ -345,7 +345,7 @@
         <scene sceneID="2mP-vB-ol5">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q4T-PU-2LS" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Home" id="vvW-sI-WQD"/>
+                    <tabBarItem key="tabBarItem" title="Home" image="feed_tab" id="vvW-sI-WQD"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="sjd-q5-yA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -364,7 +364,7 @@
         <scene sceneID="FoM-mL-XM7">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dH4-PR-kDt" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="New Post" id="L2R-lh-5Ne"/>
+                    <tabBarItem key="tabBarItem" title="New Post" image="insta_camera_btn" id="L2R-lh-5Ne"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="s46-XX-UeA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -383,7 +383,7 @@
         <scene sceneID="mIP-RH-W6C">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8DB-cO-sQj" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="Profile" id="kQ2-jg-roG"/>
+                    <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="kQ2-jg-roG"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="o4h-62-3qU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
@@ -399,6 +399,11 @@
             <point key="canvasLocation" x="743" y="-813"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="feed_tab" width="25" height="25"/>
+        <image name="insta_camera_btn" width="25" height="25"/>
+        <image name="profile_tab" width="25" height="25"/>
+    </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jrG-eo-5jv"/>
     </inferredMetricsTieBreakers>
