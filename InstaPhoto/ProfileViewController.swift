@@ -12,7 +12,7 @@ import UIKit
 import Parse
 import ParseUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource{
+class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
 
     @IBOutlet weak var collectionView: UICollectionView!
     
@@ -25,11 +25,19 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
         collectionView.dataSource = self
         collectionView.delegate = self
         
+        
         //customize layout of the photo grid
-//        flowLayout.scrollDirection = .Horizontal
-//        flowLayout.minimumLineSpacing = 0
-//        flowLayout.minimumInteritemSpacing = 0
-//        flowLayout.sectionInset = UIEdgeInsetsMake(0, 0, 0, 10)
+        let screenSize = UIScreen.main.bounds
+        let screenWidth = screenSize.width
+        //let screenHeight = screenSize.height
+
+        let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
+        
+        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
+        layout.minimumInteritemSpacing = 0
+        layout.minimumLineSpacing = 0
+        collectionView!.collectionViewLayout = layout
         
         //setup a sticky header
 //         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HeaderViewIdentifier)
@@ -87,7 +95,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             PFUser.logOut()
             print("User has logged out")
             NotificationCenter.default.post(name: NSNotification.Name("logoutNotification"), object: nil)
-            
             
         }
         
