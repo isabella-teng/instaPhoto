@@ -11,15 +11,24 @@
 import UIKit
 import Parse
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
 
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        usernameField.delegate = self
+        passwordField.delegate = self
 
         // Do any additional setup after loading the view.
+    }
+    
+    func textFieldDidBeginEditing(_ textField: UITextField) {
+        usernameField.text = ""
+        passwordField.text = ""
+        
     }
 
     override func didReceiveMemoryWarning() {
