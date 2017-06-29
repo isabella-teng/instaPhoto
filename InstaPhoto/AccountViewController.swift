@@ -75,8 +75,9 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InstaPostTableViewCell", for: indexPath) as! InstaPostTableViewCell
-//        
-//        cell.contentView.frame = CGRect(x: 2, y: 2, width: 2, height: 2)
+        
+        cell.contentView.frame = CGRect(x: 2, y: 2, width: 2, height: 2)
+        
         let singlePost = allPosts![indexPath.row]
         
         if let author = singlePost["author"] as? PFUser {

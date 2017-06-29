@@ -16,6 +16,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
     @IBOutlet weak var collectionView: UICollectionView!
     
+    @IBOutlet weak var profileUsernameLabel: UILabel!
     
     var allPosts: [PFObject]? = []
     
@@ -33,17 +34,24 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
 
         let layout: UICollectionViewFlowLayout = UICollectionViewFlowLayout()
         
-        layout.sectionInset = UIEdgeInsets(top: 20, left: 0, bottom: 10, right: 0)
+        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 10, right: 0)
         layout.itemSize = CGSize(width: screenWidth/3, height: screenWidth/3)
         layout.minimumInteritemSpacing = 0
         layout.minimumLineSpacing = 0
         collectionView!.collectionViewLayout = layout
         
-        //setup a sticky header
-//         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HeaderViewIdentifier)
+        layout.sectionHeadersPinToVisibleBounds = true
         
         fetchPosts()
+        
+        profileUsernameLabel.text = PFUser.current()?.username
     }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+        
+        return CGSize(width: UIScreen.main.bounds.width, height: 40)
+    }
+    
     
     
     func fetchPosts() {
