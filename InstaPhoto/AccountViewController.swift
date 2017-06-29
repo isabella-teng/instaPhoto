@@ -26,13 +26,12 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         
+        
         // Initialize a UIRefreshControl
         
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(AccountViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
-        
-        //fetchPosts()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -47,7 +46,6 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         let query = PFQuery(className: "Post")
         
         query.order(byDescending: "createdAt")
-        //query.includeKey("createdAt")
         query.includeKey("author")
         
         
@@ -74,6 +72,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InstaPostTableViewCell", for: indexPath) as! InstaPostTableViewCell
+        
+//        cell.contentView.frame = CGRect(x: 2, y: 2, width: 2, height: 2)
         let singlePost = allPosts![indexPath.row]
         
         if let author = singlePost["author"] as? PFUser {

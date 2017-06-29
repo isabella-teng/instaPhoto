@@ -24,7 +24,6 @@ class InstaPostTableViewCell: UITableViewCell {
             self.imgPostImageView.loadInBackground()
         }
     }
-
     
     override func awakeFromNib() {
         super.awakeFromNib()

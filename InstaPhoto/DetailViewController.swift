@@ -51,6 +51,13 @@ class DetailViewController: UIViewController {
         
     
     }
+    
+    @IBAction func onBack(_ sender: Any) {
+        self.dismiss(animated: false, completion: nil)
+        print("back")
+    }
+    
+    
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

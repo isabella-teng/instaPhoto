@@ -16,6 +16,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var usernameField: UITextField!
     
+    var usernameFirst: Bool = true
+    var passwordFirst: Bool = true
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -26,8 +29,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
-        usernameField.text = ""
-        passwordField.text = ""
+        
+        if textField == usernameField && usernameFirst{
+            usernameField.text = ""
+            usernameFirst = false
+            
+        } else if textField == passwordField && passwordFirst {
+            passwordField.text = ""
+            passwordFirst = false
+        }
         
     }
 
