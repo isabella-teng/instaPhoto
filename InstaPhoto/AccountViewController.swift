@@ -6,7 +6,7 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
 
-//TO DO: Add refresh, get new post to automatically upload
+//TO DO: get new post to automatically upload!
 
 import UIKit
 import Parse

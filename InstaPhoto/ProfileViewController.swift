@@ -7,7 +7,7 @@
 //
 
 
-//fix logout to just dismiss NOT what I have now
+//fix logout to just dismiss NOT what I have now??
 import UIKit
 import Parse
 

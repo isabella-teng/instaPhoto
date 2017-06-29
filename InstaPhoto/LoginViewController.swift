@@ -6,7 +6,6 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
 
-//TO DO: alert if login/sign up isn't successful. alert if is successful
 
 import UIKit
 import Parse
@@ -56,13 +55,42 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         let username = usernameField.text ?? ""
         let password = passwordField.text ?? ""
         
+        emptyCheck(user: username, pass: password)
+        
         PFUser.logInWithUsername(inBackground: username, password: password) { (user: PFUser?, error: Error?) in
             if user != nil {
                 print("User logged in successfully")
                 self.performSegue(withIdentifier: "loginSegue", sender: nil )
+            } else {
+                let alertController = UIAlertController(title: "Error", message: "Incorrect username and/or password", preferredStyle: .alert)
+                
+                let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                    print("User dismissed error")
+                })
+                
+                alertController.addAction(okAction)
+                self.present(alertController, animated: true) {
+                }
+
             }
         }
     }
+    
+    func emptyCheck(user: String, pass: String) {
+        if user.isEmpty || pass.isEmpty {
+            let alertController = UIAlertController(title: "Empty Field", message: "Please enter your username and/or password", preferredStyle: .alert)
+            
+            let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                print("User dismissed error")
+            })
+            
+            alertController.addAction(okAction)
+            present(alertController, animated: true) {
+            }
+            
+        }
+    }
+
   
    
     @IBAction func onSignUp(_ sender: Any) {
@@ -71,6 +99,8 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.password = passwordField.text
         newUser.username = usernameField.text
         
+        emptyCheck(user: newUser.username!, pass: newUser.password!)
+        
         newUser.signUpInBackground { (success: Bool, error:Error?) in
             if success {
                 print("Created a user successfully")
@@ -78,7 +108,15 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
                 print(error?.localizedDescription)
                 
                 if error?._code == 202 {
-                    print("Username is taken")
+                    let alertController = UIAlertController(title: "Username is taken", message: "Please choose a different username", preferredStyle: .alert)
+                    
+                    let okAction = UIAlertAction(title: "OK", style: .default, handler: { (action) in
+                        print("User dismissed error")
+                    })
+                    
+                    alertController.addAction(okAction)
+                    self.present(alertController, animated: true) {
+                    }
                 }
             }
         }
