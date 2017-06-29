@@ -10,15 +10,66 @@
 //fix logout to just dismiss NOT what I have now??
 import UIKit
 import Parse
+import ParseUI
 
-class ProfileViewController: UIViewController {
+class ProfileViewController: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource {
 
+    @IBOutlet weak var collectionView: UICollectionView!
+    
+    var allPosts: [PFObject]? = []
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        collectionView.dataSource = self
+        collectionView.delegate = self
+        
+        //setup a sticky header
+//         tableView.register(UITableViewHeaderFooterView.self, forHeaderFooterViewReuseIdentifier: HeaderViewIdentifier)
+        
+        fetchPosts()
+    }
+    
+    
+    func fetchPosts() {
+        let query = PFQuery(className: "Post")
+        
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        
+        
+        // The getObjectInBackgroundWithId methods are asynchronous, so any code after this will run
+        // immediately.  Any code that depends on the query result should be moved
+        // inside the completion block above.
+        
+        query.findObjectsInBackground { (posts: [PFObject]?, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                self.allPosts = posts
+                self.collectionView.reloadData()
+            }
+            
+        }
+        
     }
 
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+        return allPosts!.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "CollectionPhotoCell", for: indexPath) as!
+        CollectionPhotoCell
+        
+        let singlePost = allPosts?[indexPath.item]
+        cell.instagramPost = singlePost
+        
+        return cell
+    }
+    
+    
     
     @IBAction func onLogout(_ sender: Any) {
         
