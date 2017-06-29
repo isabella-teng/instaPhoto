@@ -86,12 +86,21 @@ class ProfileViewController: UIViewController, UICollectionViewDelegate, UIColle
             //PFUser.currentUser() will now be nil
             PFUser.logOut()
             print("User has logged out")
-            self.performSegue(withIdentifier: "logoutSegue",sender: nil )
-                
+            NotificationCenter.default.post(name: NSNotification.Name("logoutNotification"), object: nil)
+            
+            
         }
         
 
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! DetailViewController
+        let cell = sender as! UICollectionViewCell
+        let indexPath = collectionView.indexPath(for: cell)
+        destinationViewController.post = allPosts?[indexPath!.row]
+    }
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

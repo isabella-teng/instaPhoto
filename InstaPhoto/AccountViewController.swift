@@ -26,6 +26,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         tableView.dataSource = self
         tableView.delegate = self
         
+        tableView.estimatedRowHeight = 600
+        
         
         // Initialize a UIRefreshControl
         refreshControl = UIRefreshControl()

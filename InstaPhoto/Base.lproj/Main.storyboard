@@ -108,21 +108,21 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="s6I-EE-v9i">
-                                    <size key="itemSize" width="100" height="100"/>
+                                    <size key="itemSize" width="140" height="140"/>
                                     <size key="headerReferenceSize" width="0.0" height="0.0"/>
                                     <size key="footerReferenceSize" width="0.0" height="0.0"/>
                                     <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 </collectionViewFlowLayout>
                                 <cells>
                                     <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CollectionPhotoCell" id="lnI-Oy-OBx" customClass="CollectionPhotoCell" customModule="InstaPhoto" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
-                                            <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYB-6c-jOC" customClass="PFImageView">
-                                                    <rect key="frame" x="0.0" y="0.0" width="100" height="100"/>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="LYB-6c-jOC" customClass="PFImageView">
+                                                    <rect key="frame" x="0.0" y="0.0" width="140" height="140"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 </imageView>
                                             </subviews>
@@ -130,6 +130,7 @@
                                         <color key="backgroundColor" red="0.82804594670651788" green="1" blue="0.7712703812002526" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                         <connections>
                                             <outlet property="picImageView" destination="LYB-6c-jOC" id="qt6-qj-bSs"/>
+                                            <segue destination="cOd-YD-mrE" kind="show" identifier="profileToDetailSegue" id="OSx-Km-gzB"/>
                                         </connections>
                                     </collectionViewCell>
                                 </cells>
@@ -145,7 +146,6 @@
                                 <state key="normal" title="Logout"/>
                                 <connections>
                                     <action selector="onLogout:" destination="DnC-aB-Qde" eventType="touchUpInside" id="qGa-uS-6P2"/>
-                                    <segue destination="BYZ-38-t0r" kind="presentation" identifier="logoutSegue" id="xwh-9j-6sl"/>
                                 </connections>
                             </button>
                         </barButtonItem>
@@ -489,5 +489,6 @@
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="jrG-eo-5jv"/>
+        <segue reference="OSx-Km-gzB"/>
     </inferredMetricsTieBreakers>
 </document>
