@@ -36,8 +36,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
             
             window?.rootViewController = tabBarController as! UITabBarController
+        } else {
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            
+            window?.rootViewController = loginViewController
         }
-    
+        
         return true
     }
 

@@ -24,6 +24,7 @@ class ProfileViewController: UIViewController {
         
         PFUser.logOutInBackground { (error: Error?) in
             //PFUser.currentUser() will now be nil
+            PFUser.logOut()
             print("User has logged out")
             self.performSegue(withIdentifier: "logoutSegue",sender: nil )
                 
