@@ -10,6 +10,7 @@
 import UIKit
 import Parse
 import ParseUI
+import ChameleonFramework
 
 class DetailViewController: UIViewController {
 
