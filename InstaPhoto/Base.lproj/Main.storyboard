@@ -9,6 +9,11 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
+    <customFonts key="customFonts">
+        <array key="Watermelon Script Demo.ttf">
+            <string>WatermelonScriptDemo</string>
+        </array>
+    </customFonts>
     <scenes>
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
@@ -52,13 +57,6 @@
                                 <rect key="frame" x="0.0" y="-95" width="375" height="417"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instaphoto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB0-Pj-cr7">
-                                <rect key="frame" x="65" y="247" width="244" height="75"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="SnellRoundhand-Black" family="Snell Roundhand" pointSize="48"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JTm-Wz-HXG">
                                 <rect key="frame" x="195" y="459" width="164" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -71,6 +69,13 @@
                                     <action selector="onSignUp:" destination="BYZ-38-t0r" eventType="touchUpInside" id="rQZ-ga-w5v"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instaphoto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB0-Pj-cr7">
+                                <rect key="frame" x="46" y="247" width="282" height="75"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" name="WatermelonScriptDemo" family="Watermelon Script Demo" pointSize="48"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.87580547986039203" green="0.86733372973516809" blue="0.94206897520648381" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                         <gestureRecognizers/>
@@ -152,7 +157,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userphoto" translatesAutoresizingMaskIntoConstraints="NO" id="HMv-nc-2Uy" customClass="PFImageView">
-                                            <rect key="frame" x="0.0" y="11" width="96" height="98"/>
+                                            <rect key="frame" x="8" y="8" width="96" height="98"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="add bio!" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R3q-ir-Qoh">
@@ -163,7 +168,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iT9-Ke-BVw">
-                                            <rect key="frame" x="0.0" y="12" width="96" height="96"/>
+                                            <rect key="frame" x="8" y="8" width="96" height="96"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <connections>
                                                 <action selector="onProfileTap:" destination="DnC-aB-Qde" eventType="touchUpInside" id="Fcb-MS-up3"/>
@@ -193,6 +198,7 @@
                         <outlet property="collectionView" destination="7kC-N1-tdL" id="80E-h8-tSo"/>
                         <outlet property="profileImageView" destination="HMv-nc-2Uy" id="ATA-d6-qhT"/>
                         <outlet property="profileUsernameLabel" destination="DaD-LX-hr9" id="NCC-2f-EUW"/>
+                        <outlet property="tableViewCell" destination="zBa-wS-6zh" id="grt-55-l0G"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="FTN-pz-6IZ" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -507,7 +513,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Q4T-PU-2LS" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Home" image="feed_tab" id="vvW-sI-WQD"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sjd-q5-yA9">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="sjd-q5-yA9">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -526,7 +532,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="dH4-PR-kDt" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="New Post" image="insta_camera_btn" id="L2R-lh-5Ne"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="s46-XX-UeA">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="s46-XX-UeA">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -545,7 +551,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="8DB-cO-sQj" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Profile" image="profile_tab" id="kQ2-jg-roG"/>
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="o4h-62-3qU">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="o4h-62-3qU">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>

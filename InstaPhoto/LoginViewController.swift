@@ -24,7 +24,6 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         usernameField.delegate = self
         passwordField.delegate = self
 
-        // Do any additional setup after loading the view.
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {

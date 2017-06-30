@@ -22,9 +22,19 @@ class InstaPostTableViewCell: UITableViewCell {
         didSet {
             self.imgPostImageView.file = instagramPost["media"] as? PFFile
             self.imgPostImageView.loadInBackground()
+            
+            
+            imgPostImageView.layer.cornerRadius = 15
+            imgPostImageView.clipsToBounds = true
+            
         }
     }
     
+//    func roundCorners () {
+//        imgPostImageView.layer.cornerRadius = 10
+//        imgPostImageView.clipsToBounds = true
+//    }
+//    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

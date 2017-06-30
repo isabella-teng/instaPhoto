@@ -18,6 +18,7 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
     @IBOutlet weak var profileUsernameLabel: UILabel!
     @IBOutlet weak var profileImageView: PFImageView!
     
+    @IBOutlet weak var tableViewCell: UITableViewCell!
     
     var allPosts: [PFObject]? = []
     
@@ -29,6 +30,9 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableViewCell.contentView.layer.borderWidth = 2
+        tableViewCell.contentView.layer.borderColor = UIColor.black.cgColor
         
         collectionView.dataSource = self
         collectionView.delegate = self
@@ -81,8 +85,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
                 
                 self.profileImageView.file = pic?["media"] as? PFFile
                 self.profileImageView.loadInBackground()
-                
-                //self.profPost = pic!
 
             }
         }
@@ -138,7 +140,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
         editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
         dismiss(animated: true, completion: nil)
         
-        //profileImageView.image = editedImage
         
         
         Post.postProfileImage(image: editedImage) { (success: Bool, error: Error?) in
@@ -147,7 +148,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
             } else {
                 print(error?.localizedDescription)
             }
-            
         }
     
     }
@@ -173,11 +173,11 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
 //        PFUser.logOutInBackground { (error: Error?) in
 //            //PFUser.currentUser() will now be nil
-//            PFUser.logOut()
+//            //PFUser.logOut(
+            //PFUser.logOutInBackground()
             print("User has logged out")
             NotificationCenter.default.post(name: NSNotification.Name("logoutNotification"), object: nil)
-            
-//        }
+        //}
         
     }
     

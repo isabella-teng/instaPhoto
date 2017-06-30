@@ -31,6 +31,9 @@ class DetailViewController: UIViewController {
         captionLabel.sizeToFit()
         timeLabel.sizeToFit()
         
+        picImageView.layer.cornerRadius = 10
+        picImageView.clipsToBounds = true
+        
 //        self.view.backgroundColor = UIColor(gradientStyle:UIGradientStyle, withFrame:CGRect, andColors:[UIColor.black, UIColor.white])
         
         if let author = post["author"] as? PFUser {

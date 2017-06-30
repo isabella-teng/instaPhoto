@@ -11,6 +11,7 @@
 		3565B93F9193D7BD9F156BF1 /* Pods_InstaPhotoUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A78C5A8803D0AF3EB7D3373D /* Pods_InstaPhotoUITests.framework */; };
 		DF892FEE28B8A76515A4BEE8 /* Pods_InstaPhotoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0871F449891E5D986D7D4F41 /* Pods_InstaPhotoTests.framework */; };
 		FA373DFD1F060F3E003F30D7 /* EditCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373DFC1F060F3E003F30D7 /* EditCaptionViewController.swift */; };
+		FA6935781F07016F005AF030 /* mistis-fonts_watermelon-script-demo in Resources */ = {isa = PBXBuildFile; fileRef = FA6935771F07016F005AF030 /* mistis-fonts_watermelon-script-demo */; };
 		FAA3911E1F02FD3F007552B4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */; };
 		FAA391201F03077F007552B4 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */; };
 		FAA391231F0314EC007552B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA391221F0314EC007552B4 /* ProfileViewController.swift */; };
@@ -56,6 +57,7 @@
 		B20A4695D38CB3DB99416308 /* Pods-InstaPhotoUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPhotoUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPhotoUITests/Pods-InstaPhotoUITests.release.xcconfig"; sourceTree = "<group>"; };
 		EA3E82ABBFC3C9D3A4A04D8A /* Pods-InstaPhotoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPhotoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPhotoTests/Pods-InstaPhotoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA373DFC1F060F3E003F30D7 /* EditCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCaptionViewController.swift; sourceTree = "<group>"; };
+		FA6935771F07016F005AF030 /* mistis-fonts_watermelon-script-demo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mistis-fonts_watermelon-script-demo"; sourceTree = "<group>"; };
 		FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		FAA391221F0314EC007552B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -178,6 +180,7 @@
 		FAB65E131F022E3F00FE3114 /* InstaPhoto */ = {
 			isa = PBXGroup;
 			children = (
+				FA6935771F07016F005AF030 /* mistis-fonts_watermelon-script-demo */,
 				FAB65E181F022E3F00FE3114 /* Main.storyboard */,
 				FAA391211F030797007552B4 /* ViewControllers */,
 				FAA3912F1F058100007552B4 /* Custom Cells */,
@@ -325,6 +328,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA6935781F07016F005AF030 /* mistis-fonts_watermelon-script-demo in Resources */,
 				FAB65E1F1F022E3F00FE3114 /* LaunchScreen.storyboard in Resources */,
 				FAB65E1C1F022E3F00FE3114 /* Assets.xcassets in Resources */,
 				FAB65E1A1F022E3F00FE3114 /* Main.storyboard in Resources */,
