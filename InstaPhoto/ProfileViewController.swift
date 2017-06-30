@@ -171,14 +171,13 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
     
     @IBAction func onLogout(_ sender: Any) {
         
-//        PFUser.logOutInBackground { (error: Error?) in
-//            //PFUser.currentUser() will now be nil
-//            //PFUser.logOut(
-            //PFUser.logOutInBackground()
+        PFUser.logOutInBackground { (error: Error?) in
+            //PFUser.currentUser() will now be nil
+
             print("User has logged out")
             NotificationCenter.default.post(name: NSNotification.Name("logoutNotification"), object: nil)
-        //}
         
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

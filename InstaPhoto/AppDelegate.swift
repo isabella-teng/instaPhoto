@@ -25,27 +25,33 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 configuration.server = "https://shrouded-river-14118.herokuapp.com/parse"
             })
         )
-            
-            //check if user is logged in
-        if PFUser.current() != nil {
+        
+        if let currentuser = PFUser.current() {
             //if there is a logged in user then load the home view controller
             print("Welcome back!")
             //load Chat view controller and set as root view controller
             
             let storyboard = UIStoryboard(name: "Main", bundle: nil)
             let tabBarController = storyboard.instantiateViewController(withIdentifier: "MainTabBarController")
-            
             window?.rootViewController = tabBarController as! UITabBarController
-        } //else {
+        } else {
+            print("no logged in user")
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
+            window?.rootViewController = loginViewController
+
+        }
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name("logoutNotification"), object: nil, queue: OperationQueue.main) { (Notification) in
+            
             print("entered")
-            NotificationCenter.default.addObserver(forName: NSNotification.Name("logoutNotification"), object: nil, queue: OperationQueue.main) { (Notification) in
-                
+            
                 // Take user to logout screen
                 let storyboard = UIStoryboard(name: "Main", bundle: nil)
                 let loginViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")
                 self.window?.rootViewController = loginViewController
-                PFUser.logOutInBackground()
-        //}
+                //PFUser.logOutInBackground()
+                
         }
         return true
     }

@@ -12,6 +12,10 @@
 		DF892FEE28B8A76515A4BEE8 /* Pods_InstaPhotoTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0871F449891E5D986D7D4F41 /* Pods_InstaPhotoTests.framework */; };
 		FA373DFD1F060F3E003F30D7 /* EditCaptionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA373DFC1F060F3E003F30D7 /* EditCaptionViewController.swift */; };
 		FA6935781F07016F005AF030 /* mistis-fonts_watermelon-script-demo in Resources */ = {isa = PBXBuildFile; fileRef = FA6935771F07016F005AF030 /* mistis-fonts_watermelon-script-demo */; };
+		FA69357B1F0704FB005AF030 /* Watermelon Script - Terms Of Use.URL in Resources */ = {isa = PBXBuildFile; fileRef = FA6935791F0704FB005AF030 /* Watermelon Script - Terms Of Use.URL */; };
+		FA69357C1F0704FB005AF030 /* WatermelonScriptDemo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA69357A1F0704FB005AF030 /* WatermelonScriptDemo.ttf */; };
+		FA69357F1F07065E005AF030 /* Watermelon Script - Terms Of Use.URL in Resources */ = {isa = PBXBuildFile; fileRef = FA69357D1F07065E005AF030 /* Watermelon Script - Terms Of Use.URL */; };
+		FA6935801F07065E005AF030 /* WatermelonScriptDemo.ttf in Resources */ = {isa = PBXBuildFile; fileRef = FA69357E1F07065E005AF030 /* WatermelonScriptDemo.ttf */; };
 		FAA3911E1F02FD3F007552B4 /* AccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */; };
 		FAA391201F03077F007552B4 /* AddPhotoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */; };
 		FAA391231F0314EC007552B4 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA391221F0314EC007552B4 /* ProfileViewController.swift */; };
@@ -58,6 +62,10 @@
 		EA3E82ABBFC3C9D3A4A04D8A /* Pods-InstaPhotoTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-InstaPhotoTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-InstaPhotoTests/Pods-InstaPhotoTests.release.xcconfig"; sourceTree = "<group>"; };
 		FA373DFC1F060F3E003F30D7 /* EditCaptionViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditCaptionViewController.swift; sourceTree = "<group>"; };
 		FA6935771F07016F005AF030 /* mistis-fonts_watermelon-script-demo */ = {isa = PBXFileReference; lastKnownFileType = folder; path = "mistis-fonts_watermelon-script-demo"; sourceTree = "<group>"; };
+		FA6935791F0704FB005AF030 /* Watermelon Script - Terms Of Use.URL */ = {isa = PBXFileReference; lastKnownFileType = text; name = "Watermelon Script - Terms Of Use.URL"; path = "mistis-fonts_watermelon-script-demo/Watermelon Script - Terms Of Use.URL"; sourceTree = "<group>"; };
+		FA69357A1F0704FB005AF030 /* WatermelonScriptDemo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; name = WatermelonScriptDemo.ttf; path = "mistis-fonts_watermelon-script-demo/WatermelonScriptDemo.ttf"; sourceTree = "<group>"; };
+		FA69357D1F07065E005AF030 /* Watermelon Script - Terms Of Use.URL */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "Watermelon Script - Terms Of Use.URL"; sourceTree = "<group>"; };
+		FA69357E1F07065E005AF030 /* WatermelonScriptDemo.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = WatermelonScriptDemo.ttf; sourceTree = "<group>"; };
 		FAA3911D1F02FD3F007552B4 /* AccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountViewController.swift; sourceTree = "<group>"; wrapsLines = 1; };
 		FAA3911F1F03077F007552B4 /* AddPhotoViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddPhotoViewController.swift; sourceTree = "<group>"; };
 		FAA391221F0314EC007552B4 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
@@ -158,6 +166,8 @@
 		FAB65E081F022E3F00FE3114 = {
 			isa = PBXGroup;
 			children = (
+				FA6935791F0704FB005AF030 /* Watermelon Script - Terms Of Use.URL */,
+				FA69357A1F0704FB005AF030 /* WatermelonScriptDemo.ttf */,
 				FAB65E131F022E3F00FE3114 /* InstaPhoto */,
 				FAB65E281F022E3F00FE3114 /* InstaPhotoTests */,
 				FAB65E331F022E3F00FE3114 /* InstaPhotoUITests */,
@@ -187,6 +197,8 @@
 				FAA391241F033367007552B4 /* Post.swift */,
 				FAB65E141F022E3F00FE3114 /* AppDelegate.swift */,
 				FAB65E1B1F022E3F00FE3114 /* Assets.xcassets */,
+				FA69357D1F07065E005AF030 /* Watermelon Script - Terms Of Use.URL */,
+				FA69357E1F07065E005AF030 /* WatermelonScriptDemo.ttf */,
 				FAB65E1D1F022E3F00FE3114 /* LaunchScreen.storyboard */,
 				FAB65E201F022E3F00FE3114 /* Info.plist */,
 			);
@@ -328,9 +340,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA69357B1F0704FB005AF030 /* Watermelon Script - Terms Of Use.URL in Resources */,
+				FA69357C1F0704FB005AF030 /* WatermelonScriptDemo.ttf in Resources */,
 				FA6935781F07016F005AF030 /* mistis-fonts_watermelon-script-demo in Resources */,
 				FAB65E1F1F022E3F00FE3114 /* LaunchScreen.storyboard in Resources */,
+				FA6935801F07065E005AF030 /* WatermelonScriptDemo.ttf in Resources */,
 				FAB65E1C1F022E3F00FE3114 /* Assets.xcassets in Resources */,
+				FA69357F1F07065E005AF030 /* Watermelon Script - Terms Of Use.URL in Resources */,
 				FAB65E1A1F022E3F00FE3114 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

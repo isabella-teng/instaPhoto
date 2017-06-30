@@ -10,7 +10,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Watermelon Script Demo.ttf">
+        <array key="WatermelonScriptDemo.ttf">
             <string>WatermelonScriptDemo</string>
         </array>
     </customFonts>
@@ -70,9 +70,9 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Instaphoto" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PB0-Pj-cr7">
-                                <rect key="frame" x="46" y="247" width="282" height="75"/>
+                                <rect key="frame" x="46" y="234" width="282" height="75"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" name="WatermelonScriptDemo" family="Watermelon Script Demo" pointSize="48"/>
+                                <fontDescription key="fontDescription" name="WatermelonScriptDemo" family="Watermelon Script Demo" pointSize="54"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
