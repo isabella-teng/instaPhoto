@@ -8,7 +8,7 @@ target 'InstaPhoto' do
   # Pods for InstaPhoto
   pod 'Parse'
   pod 'ParseUI'
-  pod 'ChameleonFramework/Swift'
+  #pod 'ChameleonFramework/Swift'
 
   target 'InstaPhotoTests' do
     inherit! :search_paths

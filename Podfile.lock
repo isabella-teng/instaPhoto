@@ -1,8 +1,5 @@
 PODS:
   - Bolts/Tasks (1.8.4)
-  - ChameleonFramework/Default (2.1.0)
-  - ChameleonFramework/Swift (2.1.0):
-    - ChameleonFramework/Default
   - Parse (1.14.4):
     - Bolts/Tasks (~> 1.8)
   - ParseUI (1.2.0):
@@ -10,16 +7,14 @@ PODS:
     - Parse (~> 1.9)
 
 DEPENDENCIES:
-  - ChameleonFramework/Swift
   - Parse
   - ParseUI
 
 SPEC CHECKSUMS:
   Bolts: 8a7995239dbe724f9cba2248b766d48b7ebdd322
-  ChameleonFramework: d21a3cc247abfe5e37609a283a8238b03575cf64
   Parse: b0aa91d2c435e53d4a9af26e741e014c9b35c42e
   ParseUI: af2eba584799da4a9fbdac0e178662d7438b502e
 
-PODFILE CHECKSUM: c1a31da19c342aa33da80962e771a140242219e7
+PODFILE CHECKSUM: 9fa72db0f8ea6bdb69123e9a1353f9dec2c854b1
 
 COCOAPODS: 1.2.1

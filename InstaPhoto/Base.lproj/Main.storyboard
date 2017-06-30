@@ -297,7 +297,6 @@
         <!--Detail View Controller-->
         <scene sceneID="NAe-mD-W9W">
             <objects>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="jsw-L4-1Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
                 <viewController id="cOd-YD-mrE" customClass="DetailViewController" customModule="InstaPhoto" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="7M9-4M-OFy"/>
@@ -367,6 +366,7 @@
                         <outlet property="usernameLabel" destination="mJC-NI-LF5" id="B62-r1-mbb"/>
                     </connections>
                 </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jsw-L4-1Qf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2352.8000000000002" y="166.8665667166417"/>
         </scene>

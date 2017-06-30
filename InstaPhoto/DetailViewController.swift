@@ -5,12 +5,12 @@
 //  Created by Isabella Teng on 6/28/17.
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
-//T0 Do: Fix crashes 
+//T0 Do: Fix crashes, fix pod
 
 import UIKit
 import Parse
 import ParseUI
-import ChameleonFramework
+//import ChameleonFramework
 
 class DetailViewController: UIViewController {
 
@@ -30,6 +30,8 @@ class DetailViewController: UIViewController {
         usernameLabel.sizeToFit()
         captionLabel.sizeToFit()
         timeLabel.sizeToFit()
+        
+//        self.view.backgroundColor = UIColor(gradientStyle:UIGradientStyle, withFrame:CGRect, andColors:[UIColor.black, UIColor.white])
         
         if let author = post["author"] as? PFUser {
             let username = author.username
