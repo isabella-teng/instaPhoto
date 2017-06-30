@@ -6,7 +6,7 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 
 //TO DO: fix keyboard tap
-//TO DO: fix segues and navigation
+//TO DO: fix segues and navigation. code in segue
 
 import UIKit
 import Parse

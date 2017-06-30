@@ -41,6 +41,23 @@ class Post: NSObject {
         
     }
     
+    class func postProfileImage(image: UIImage?, withCompletion completion: PFBooleanResultBlock?) {
+        
+        //create the Parse object
+        
+        let post = PFObject(className: "ProfPic")
+        
+        //add the necessary fields to the object
+        post["media"] = getPFFileFromImage(image: image) // PFFile column type
+        post["author"] = PFUser.current() // Pointer column type that points to PFUser
+        
+        post.saveInBackground(block: completion)
+        
+    }
+
+    
+    
+    
     /**
      Method to convert UIImage to PFFile
      

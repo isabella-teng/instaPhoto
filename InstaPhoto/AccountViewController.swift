@@ -6,7 +6,7 @@
 //  Copyright © 2017 Isabella Teng. All rights reserved.
 //
 
-//TO DO: get new post to automatically upload!
+//TO DO: get new post to automatically upload! code in the segue
 
 import UIKit
 import Parse
@@ -33,6 +33,8 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(AccountViewController.didPullToRefresh(_:)), for: .valueChanged)
         tableView.insertSubview(refreshControl, at: 0)
+        
+        tableView.rowHeight = UITableViewAutomaticDimension
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -76,7 +78,6 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "InstaPostTableViewCell", for: indexPath) as! InstaPostTableViewCell
         
-        cell.contentView.frame = CGRect(x: 2, y: 2, width: 2, height: 2)
         
         let singlePost = allPosts![indexPath.row]
         
@@ -85,7 +86,10 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
             cell.usernameLabel.text = username
         }
         
-        cell.captionLabel.text = singlePost["caption"] as! String
+        if let cap = singlePost["caption"] as? String {
+            cell.captionLabel.text = cap
+        }
+        //cell.captionLabel.text = singlePost["caption"] as! String
         cell.instagramPost = singlePost
         
         return cell

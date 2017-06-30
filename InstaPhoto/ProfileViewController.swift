@@ -7,18 +7,25 @@
 //
 
 
-//fix logout to just dismiss NOT what I have now??
+//to do: fix logout
 import UIKit
 import Parse
 import ParseUI
 
-class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource{
+class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayout, UICollectionViewDataSource, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var collectionView: UICollectionView!
-    
     @IBOutlet weak var profileUsernameLabel: UILabel!
+    @IBOutlet weak var profileImageView: PFImageView!
+    
     
     var allPosts: [PFObject]? = []
+    
+    var originalImage: UIImage?
+    var editedImage: UIImage?
+    
+    var profPost: PFObject? = nil
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -42,16 +49,40 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
         
         layout.sectionHeadersPinToVisibleBounds = true
         
+        //round out the image
+        profileImageView.layer.cornerRadius = 50
+        profileImageView.clipsToBounds = true
+        
         fetchPosts()
         
         profileUsernameLabel.text = PFUser.current()?.username
     }
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
+    //set prof pic here
+    override func viewDidAppear(_ animated: Bool) {
+        fetchProfPic()
         
-        return CGSize(width: UIScreen.main.bounds.width, height: 40)
     }
     
+    func fetchProfPic() {
+        let query = PFQuery(className: "ProfPic")
+        
+        query.order(byDescending: "createdAt")
+        query.includeKey("author")
+        query.whereKey("author", equalTo: PFUser.current()) //each user w its own profpic
+        
+        query.getFirstObjectInBackground { (pic: PFObject?, error: Error?) in
+            if let error = error {
+                print(error.localizedDescription)
+            } else {
+                //self.profPost = pic!
+                
+                self.profileImageView.file = pic?["media"] as? PFFile
+                self.profileImageView.loadInBackground()
+
+            }
+        }
+    }
     
     
     func fetchPosts() {
@@ -77,6 +108,44 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
             
         }
         
+    }
+
+    @IBAction func onProfileTap(_ sender: Any) {
+        print("change prof pic")
+        //go to camera, take picture
+        let vc = UIImagePickerController()
+        vc.delegate = self as! UIImagePickerControllerDelegate & UINavigationControllerDelegate
+        vc.allowsEditing = true
+        if UIImagePickerController.isSourceTypeAvailable(.camera) {
+            print("Camera is available!")
+            vc.sourceType = .camera
+        } else {
+            print("Camera is not available so we will use the photo library instead")
+            vc.sourceType = .photoLibrary
+        }
+
+        self.present(vc, animated: true, completion: nil)
+    }
+    
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : Any]) {
+    
+        originalImage = info[UIImagePickerControllerOriginalImage] as! UIImage
+        editedImage = info[UIImagePickerControllerEditedImage] as! UIImage
+        dismiss(animated: true, completion: nil)
+        
+        //profileImageView.image = editedImage
+        
+        
+        Post.postProfileImage(image: editedImage) { (success: Bool, error: Error?) in
+            if success {
+                print("Sent prof pic to parse")
+            } else {
+                print(error?.localizedDescription)
+            }
+            
+        }
+    
     }
 
     
@@ -106,7 +175,6 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
             
         }
         
-
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

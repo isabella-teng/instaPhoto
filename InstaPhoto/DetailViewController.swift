@@ -30,7 +30,10 @@ class DetailViewController: UIViewController {
             usernameLabel.text = username
         }
         
-        captionLabel.text = post["caption"] as! String
+        if let cap = post["caption"] as?  String {
+            captionLabel.text = cap
+        }
+        
         
         picImageView.file = post["media"] as? PFFile
         picImageView.loadInBackground()
