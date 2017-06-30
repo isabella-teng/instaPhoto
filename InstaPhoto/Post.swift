@@ -37,7 +37,9 @@ class Post: NSObject {
         post["commentsCount"] = 0
 
         // Save object (following function will save the object in Parse asynchronously)
-        post.saveInBackground(block: completion)
+        if post != nil {
+            post.saveInBackground(block: completion)
+        }
         
     }
     

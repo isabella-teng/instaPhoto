@@ -104,6 +104,9 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         newUser.signUpInBackground { (success: Bool, error:Error?) in
             if success {
                 print("Created a user successfully")
+                
+                self.performSegue(withIdentifier: "loginSegue", sender: nil )
+                
             } else {
                 print(error?.localizedDescription)
                 

@@ -37,7 +37,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
             
             window?.rootViewController = tabBarController as! UITabBarController
         } else {
-            print("here")
             NotificationCenter.default.addObserver(forName: NSNotification.Name("logoutNotification"), object: nil, queue: OperationQueue.main) { (Notification) in
                 
                 // Take user to logout screen

@@ -31,6 +31,7 @@ class EditPhotoViewController: UIViewController {
     }
     
     @IBAction func onPost(_ sender: Any) {
+        print("mADE IT")
         Post.postUserImage(image: chosenImage, withCaption: captionTextView.text) { (success: Bool, error: Error?) in
             if success {
                 print("Yay posted")

@@ -45,6 +45,12 @@ class AccountViewController: UIViewController, UITableViewDelegate, UITableViewD
         fetchPosts()
     }
     
+    //turn of grey background when  cell is clicked
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        tableView.deselectRow(at: indexPath, animated: false)
+    }
+
+    
     func fetchPosts() {
         let query = PFQuery(className: "Post")
         

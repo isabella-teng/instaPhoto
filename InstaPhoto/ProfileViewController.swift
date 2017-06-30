@@ -7,7 +7,7 @@
 //
 
 
-//to do: fix logout
+//to do: fix logout. fix how prof pic doesn't automatically change
 import UIKit
 import Parse
 import ParseUI
@@ -75,10 +75,14 @@ class ProfileViewController: UIViewController, UICollectionViewDelegateFlowLayou
             if let error = error {
                 print(error.localizedDescription)
             } else {
-                //self.profPost = pic!
+                
+                self.profPost = pic!
+                self.reloadInputViews()
                 
                 self.profileImageView.file = pic?["media"] as? PFFile
                 self.profileImageView.loadInBackground()
+                
+                //self.profPost = pic!
 
             }
         }
