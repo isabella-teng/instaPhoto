@@ -8,22 +8,22 @@ Time spent: 30 hours spent in total
 
 The following **required** functionality is completed:
 
-- [x ] User can sign up to create a new account using Parse authentication
+- [x] User can sign up to create a new account using Parse authentication
 - [x] User can log in and log out of his or her account
-- [x ] The current signed in user is persisted across app restarts
-- [x ] User can take a photo, add a caption, and post it to "Instagram"
-- [ x] User can view the last 20 posts submitted to "Instagram"
-- [ x] User can pull to refresh the last 20 posts submitted to "Instagram"
-- [ x] User can load more posts once he or she reaches the bottom of the feed using infinite Scrolling
-- [ x] User can tap a post to view post details, including timestamp and creation
-- [ x] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user.
+- [x] The current signed in user is persisted across app restarts
+- [x] User can take a photo, add a caption, and post it to "Instagram"
+- [x] User can view the last 20 posts submitted to "Instagram"
+- [x] User can pull to refresh the last 20 posts submitted to "Instagram"
+- [x] User can load more posts once he or she reaches the bottom of the feed using infinite Scrolling
+- [x] User can tap a post to view post details, including timestamp and creation
+- [x] User can use a tab bar to switch between all "Instagram" posts and posts published only by the user.
 
 The following **optional** features are implemented:
 
 - [ ] Show the username and creation time for each post
 - [ ] After the user submits a new post, show a progress HUD while the post is being uploaded to Parse.
-- [x ] User Profiles:
-- [ x] Allow the logged in user to add a profile photo
+- [x] User Profiles:
+- [x] Allow the logged in user to add a profile photo
 - [ ] Display the profile photo with each post
 - [ ] Tapping on a post's username or profile photo goes to that user's profile page
 - [ ] User can comment on a post and see all comments for each post in the post details screen.
@@ -33,7 +33,7 @@ The following **optional** features are implemented:
 
 The following **additional** features are implemented:
 
-- [x ] List anything else that you can get done to improve the app functionality!
+- [x] List anything else that you can get done to improve the app functionality!
 
 custom fonts & backgrounds, alerts for signin/up errors, 
 
@@ -56,12 +56,13 @@ List an 3rd party libraries, icons, graphics, or other assets you used in your a
 
 - [AFNetworking](https://github.com/AFNetworking/AFNetworking) - networking task library
 
+Gif of the app: [Imgur](http://i.imgur.com/05app9e.gifv)
 
 ## Notes
 
 Describe any challenges encountered while building the app.
 
-Parsing and querying data was a new concept for me. 
+Parsing and querying data was a new concept for me, and something I struggled with as I implemented more features. I am also still exploring auto-layout and designing UI of an iOS app.
 
 ## License
 
